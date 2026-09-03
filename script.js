@@ -1,6 +1,5 @@
 const WEB_APP_URL =
- 
-'https://script.google.com/macros/s/AKfycbyOnxQqelRC93Xmx61AHsmX3XsB6u3qKK_LtY0miKigHQGwH2fz75Ho1hxy8YoYYsYWQQ/exec';
+  'https://script.google.com/macros/s/AKfycbyOnxQqelRC93Xmx61AHsmX3XsB6u3qKK_LtY0miKigHQGwH2fz75Ho1hxy8YoYYsYWQQ/exec';
 
 let allStudents = [];
 
@@ -68,38 +67,40 @@ function loadClassDropdown() {
 }
 
 document.getElementById('classSelect').addEventListener('change', function () {
-  // ক্লাস অনুযায়ী নির্দিষ্ট সিগনেচার ফাইলের ম্যাপিং
-    const signatureMap = {
-        "NUR_A": "nura.png",
-        "NUR_B": "nurb.png",
-        "LKG_A": "lkga.png",
-        "LKG_B": "lkgb.png",
-        "UKG_A": "ukga.png",
-        "UKG_B": "ukgb.png",
-        "I (A)": "ia.png",
-        "I (B)": "ib.png",
-        "II (Two)": "iia.png",
-        "III (Three)": "iiia.png",
-        "IV (Four)": "iva.png",
-        "V (Five)": "va.png",
-        "VI (Six)": "via.png",
-        "VII (Seven)": "viia.png",
-        "VIII (Eight)": "viiia.png",
-        "IX (Nine)": "jagatinfras.png",
-        "X (Ten)": "jagatinfras.png"
-    };
+  // ★★★ এই লাইনটাই আগে মিসিং ছিল — এর অভাবেই পুরো function crash করছিল ★★★
+  const cls = this.value;
 
-    const signImg = document.getElementById('classTeacherSign');
-    if (signImg) {
-        if (cls && signatureMap[cls]) {
-            signImg.src = `Signatures/${signatureMap[cls]}`;
-            signImg.style.display = 'block';
-        } else {
-            signImg.style.display = 'none';
-        }
+  // ক্লাস অনুযায়ী নির্দিষ্ট সিগনেচার ফাইলের ম্যাপিং
+  const signatureMap = {
+    "NUR_A": "nura.png",
+    "NUR_B": "nurb.png",
+    "LKG_A": "lkga.png",
+    "LKG_B": "lkgb.png",
+    "UKG_A": "ukga.png",
+    "UKG_B": "ukgb.png",
+    "I (A)": "ia.png",
+    "I (B)": "ib.png",
+    "II (Two)": "iia.png",
+    "III (Three)": "iiia.png",
+    "IV (Four)": "iva.png",
+    "V (Five)": "va.png",
+    "VI (Six)": "via.png",
+    "VII (Seven)": "viia.png",
+    "VIII (Eight)": "viiia.png",
+    "IX (Nine)": "jagatinfras.png",
+    "X (Ten)": "jagatinfras.png"
+  };
+
+  const signImg = document.getElementById('classTeacherSign');
+  if (signImg) {
+    if (cls && signatureMap[cls]) {
+      signImg.src = `Signatures/${signatureMap[cls]}`;
+      signImg.style.display = 'block';
+    } else {
+      signImg.style.display = 'none';
     }
+  }
 
- 
   const studentSelect = document.getElementById('studentSelect');
   studentSelect.innerHTML = '<option value="">STUDENTS NAME</option>';
 
