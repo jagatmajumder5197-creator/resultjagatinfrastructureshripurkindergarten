@@ -69,6 +69,19 @@ function loadClassDropdown() {
 
 document.getElementById('classSelect').addEventListener('change', function () {
   const cls = this.value;
+
+const signImg = document.getElementById('classTeacherSign');
+    if (signImg) {
+        if (cls) {
+            let cleanClassName = cls.toLowerCase().replace(/_/g, '');
+            signImg.src = `Signatures/${cleanClassName}.png`;
+            signImg.style.display = 'block';
+        } else {
+            signImg.style.display = 'none';
+        }
+    }
+
+ 
   const studentSelect = document.getElementById('studentSelect');
   studentSelect.innerHTML = '<option value="">STUDENTS NAME</option>';
 
