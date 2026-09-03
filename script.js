@@ -68,13 +68,31 @@ function loadClassDropdown() {
 }
 
 document.getElementById('classSelect').addEventListener('change', function () {
-  const cls = this.value;
+  // ক্লাস অনুযায়ী নির্দিষ্ট সিগনেচার ফাইলের ম্যাপিং
+    const signatureMap = {
+        "NUR_A": "nura.png",
+        "NUR_B": "nurb.png",
+        "LKG_A": "lkga.png",
+        "LKG_B": "lkgb.png",
+        "UKG_A": "ukga.png",
+        "UKG_B": "ukgb.png",
+        "I (A)": "ia.png",
+        "I (B)": "ib.png",
+        "II (Two)": "iia.png",
+        "III (Three)": "iiia.png",
+        "IV (Four)": "iva.png",
+        "V (Five)": "va.png",
+        "VI (Six)": "via.png",
+        "VII (Seven)": "viia.png",
+        "VIII (Eight)": "viiia.png",
+        "IX (Nine): "jagatinfras.png",
+        "X (Ten)": "jagatinfras.png"
+    };
 
-const signImg = document.getElementById('classTeacherSign');
+    const signImg = document.getElementById('classTeacherSign');
     if (signImg) {
-        if (cls) {
-            let cleanClassName = cls.toLowerCase().replace(/_/g, '');
-            signImg.src = `Signatures/${cleanClassName}.png`;
+        if (cls && signatureMap[cls]) {
+            signImg.src = `Signatures/${signatureMap[cls]}`;
             signImg.style.display = 'block';
         } else {
             signImg.style.display = 'none';
