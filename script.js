@@ -1,5 +1,6 @@
 const WEB_APP_URL =
-  'https://script.google.com/macros/s/AKfycbyOnxQqelRC93Xmx61AHsmX3XsB6u3qKK_LtY0miKigHQGwH2fz75Ho1hxy8YoYYsYWQQ/exec';
+ 
+'https://script.google.com/macros/s/AKfycbyOnxQqelRC93Xmx61AHsmX3XsB6u3qKK_LtY0miKigHQGwH2fz75Ho1hxy8YoYYsYWQQ/exec';
 
 let allStudents = [];
 
@@ -11,7 +12,7 @@ const subjects = [
   { name: 'COMPUTER', fm: 'FMCM', written: 'WTCM', oral: 'OLCM' },
   { name: 'GK', fm: 'FMGK', written: 'WTGK', oral: 'OLGK' },
   { name: 'EVS', fm: 'FMEV', written: 'WTEV', oral: 'OLEV' },
-  { name: 'LSC', fm: 'FMLSC', written: 'WRLSC', oral: 'OLLSC' },
+  { name: 'LSC', fm: 'FMLSC', written: 'WTLSC', oral: 'OLLSC' },
   { name: 'PSC', fm: 'FMPSC', written: 'WTPSC', oral: 'OLPSC' },
   { name: 'Beng Rhym', fm: 'FMRYMB', written: 'WTRYMB', oral: 'OLRYMB' },
   { name: 'Eng Rhym', fm: 'FMRYME', written: 'WTRYME', oral: 'OLRYME' },
