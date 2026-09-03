@@ -85,7 +85,7 @@ document.getElementById('classSelect').addEventListener('change', function () {
         "VI (Six)": "via.png",
         "VII (Seven)": "viia.png",
         "VIII (Eight)": "viiia.png",
-        "IX (Nine): "jagatinfras.png",
+        "IX (Nine)": "jagatinfras.png",
         "X (Ten)": "jagatinfras.png"
     };
 
