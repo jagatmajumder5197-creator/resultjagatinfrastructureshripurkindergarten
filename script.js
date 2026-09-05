@@ -198,7 +198,7 @@ function getFmBreakdown(fm, writtenVal, studentClass, subject) {
   if (fm === 25) return { written: '', oral: 25 };
   if (fm === 50) {
     const wt = String(writtenVal || '').trim().toUpperCase();
-    if (wt === 'N' || wt === '') return { written: '', oral: 50 };
+    if (wt === 'N') return { written: '', oral: 50 };
     if (String(studentClass)=== 'UKG_A' && (subject=== 'HN' || subject=== 'HINDI')) return{
       written: 40, oral: 10};
     return { written: 45, oral: 5 };
