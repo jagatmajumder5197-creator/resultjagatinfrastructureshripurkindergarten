@@ -203,8 +203,13 @@ body {
   flex-shrink: 0;
 }
 
+.header-center {
+  text-align: center;
+  flex: 1;
+}
+
 .header-center h1 {
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 800;
   color: #003366;
   letter-spacing: 1px;
@@ -213,40 +218,17 @@ body {
 }
 
 .header-center h2 {
-  font-size: 13px;
+  font-size: 17px;
   color: #4a5568;
   margin: 2px 0;
   font-weight: 600;
 }
 
 .header-center h3 {
-  font-size: 15px;
+  font-size: 18px;
   color: #2b6cb0;
   margin: 4px 0 0 0;
   font-weight: 700;
-}
-
-.top-header h1 {
-  font-size: 26px;
-  font-weight: 800;
-  color: #003366;
-  letter-spacing: 0.3px;
-  line-height: 1.15;
-  white-space: nowrap;
-}
-
-.top-header h2 {
-  font-size: 13px;
-  font-weight: normal;
-  color: #555;
-  margin-top: 5px;
-}
-
-.top-header h3 {
-  font-size: 15px;
-  font-weight: bold;
-  color: #0b5394;
-  margin-top: 3px;
 }
 
 /* =========================
@@ -361,15 +343,12 @@ body {
   background: #f7faff;
 }
 
-/* Subject name column — left-aligned so the list reads cleanly */
 .result-table td:first-child {
   text-align: left;
   padding-left: 10px;
   font-weight: 600;
 }
 
-/* Obtained Marks (Written / Oral / Total) — bigger & bolder so they
-   stand out clearly from the Full Marks columns. */
 .result-table td.obt-cell {
   font-weight: 800;
   font-size: 14px;
@@ -408,7 +387,6 @@ body {
   color: #000;
 }
 
-/* Art table Obt. Marks — bold and larger (FM stays regular) */
 .final-summary td.obt-cell {
   font-weight: 900;
   font-size: 18px;
