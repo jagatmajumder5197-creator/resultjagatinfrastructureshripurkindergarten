@@ -1,0 +1,712 @@
+/* ==========================================================
+   SHRIPUR KINDERGARTEN SCHOOL — PROGRESS REPORT
+   Premium Parchment / Burgundy & Gold Theme
+   ========================================================== */
+
+:root{
+  --burgundy:#7a1128;
+  --burgundy-dark:#5c0c1e;
+  --gold:#d4af37;
+  --gold-light:#f6e6b4;
+  --cream:#fbf6ea;
+  --paper:#e9e2d0;
+  --ink:#2b2118;
+  --line:#b99a5b;
+  --muted:#6b5d4f;
+  --danger:#a11d1d;
+}
+
+*{ box-sizing:border-box; }
+
+html, body{
+  margin:0;
+  padding:0;
+  background:var(--paper);
+  font-family:'Georgia','Times New Roman',serif;
+  color:var(--ink);
+  -webkit-text-size-adjust:100%;
+}
+
+.hidden{ display:none !important; }
+
+/* ==========================================================
+   1. PORTAL / SEARCH CARD
+   ========================================================== */
+
+.portal-container{
+  max-width:480px;
+  margin:40px auto;
+  background:var(--cream);
+  border:2px solid var(--burgundy);
+  outline:1px solid var(--gold);
+  outline-offset:-6px;
+  border-radius:8px;
+  padding:32px 26px 28px;
+  text-align:center;
+  box-shadow:0 8px 26px rgba(0,0,0,0.18);
+  position:relative;
+}
+
+.portal-logo{
+  width:64px;
+  height:64px;
+  object-fit:contain;
+  margin-bottom:10px;
+}
+
+.portal-container h1{
+  font-size:20px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:var(--burgundy-dark);
+  margin:4px 0 2px;
+}
+
+.portal-container h2{
+  font-size:12px;
+  font-weight:400;
+  color:var(--muted);
+  letter-spacing:0.6px;
+  margin:0 0 4px;
+}
+
+.portal-container h3{
+  font-size:12.5px;
+  font-weight:700;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:1.4px;
+  margin:0;
+}
+
+.portal-divider{
+  height:2px;
+  width:70px;
+  background:linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin:16px auto 18px;
+}
+
+/* Loader */
+.loader-wrap{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  padding:14px 0 6px;
+}
+
+.loader{
+  width:30px;
+  height:30px;
+  border:3px solid var(--gold-light);
+  border-top-color:var(--burgundy);
+  border-radius:50%;
+  animation:spin 0.85s linear infinite;
+}
+
+@keyframes spin{
+  to{ transform:rotate(360deg); }
+}
+
+.loader-wrap p{
+  margin:0;
+  font-size:12.5px;
+  color:var(--muted);
+  letter-spacing:0.3px;
+}
+
+/* Error box */
+.error-box{
+  background:#fbe4e4;
+  border:1px solid var(--danger);
+  color:var(--danger);
+  font-size:12.5px;
+  border-radius:6px;
+  padding:10px 14px;
+  margin:10px 0;
+  text-align:left;
+}
+
+/* Selects */
+.select-group{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  text-align:left;
+  margin:6px 0 18px;
+}
+
+.select-label{
+  font-size:11px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.8px;
+  color:var(--burgundy-dark);
+  margin-bottom:4px;
+  display:block;
+}
+
+select{
+  width:100%;
+  appearance:none;
+  -webkit-appearance:none;
+  font-family:inherit;
+  font-size:14px;
+  padding:11px 14px;
+  border:1.5px solid var(--line);
+  border-radius:6px;
+  background:#fff url('data:image/svg+xml;utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 20 20%22%3E%3Cpath fill=%22%237a1128%22 d=%22M5 7l5 6 5-6z%22/%3E%3C/svg%3E') no-repeat right 12px center;
+  background-size:14px;
+  color:var(--ink);
+  min-height:44px;
+  transition:border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+select:focus{
+  outline:none;
+  border-color:var(--burgundy);
+  box-shadow:0 0 0 3px rgba(122,17,40,0.12);
+}
+
+select:disabled{
+  background-color:#f1ede1;
+  color:#a49a86;
+  cursor:not-allowed;
+}
+
+/* Button (shared base) */
+button, .btn{
+  appearance:none;
+  border:none;
+  outline:none;
+  cursor:pointer;
+  font-family:inherit;
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:0.4px;
+  border-radius:8px;
+  min-height:46px;
+  box-shadow:0 3px 8px rgba(0,0,0,0.2);
+  transition:transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+button:active, .btn:active{
+  transform:translateY(1px) scale(0.98);
+}
+
+#viewResultBtn{
+  width:100%;
+  padding:13px 20px;
+  color:#fff;
+  background:linear-gradient(180deg, var(--burgundy) 0%, var(--burgundy-dark) 100%);
+}
+
+#viewResultBtn:disabled{
+  background:#c9b8a4;
+  cursor:not-allowed;
+  box-shadow:none;
+}
+
+/* ==========================================================
+   2. RESULT WRAPPER / MARKSHEET
+   ========================================================== */
+
+.result-wrapper{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  padding:20px 8px 40px;
+}
+
+.marksheet{
+  width:210mm;
+  max-width:100%;
+  background:var(--cream);
+  background-image:
+    radial-gradient(circle at 0 0, rgba(212,175,55,0.06), transparent 40%),
+    radial-gradient(circle at 100% 100%, rgba(212,175,55,0.06), transparent 40%);
+  border:3px solid var(--burgundy);
+  outline:1px solid var(--gold);
+  outline-offset:-7px;
+  padding:10mm 9mm 8mm;
+  position:relative;
+  box-shadow:0 6px 24px rgba(0,0,0,0.18);
+}
+
+.marksheet::before{
+  content:"";
+  position:absolute;
+  inset:4px;
+  border:1px solid var(--gold);
+  pointer-events:none;
+}
+
+/* ---------- HEADER ---------- */
+
+.header-logo-row{
+  display:grid;
+  grid-template-columns:78px 1fr 78px;
+  align-items:center;
+  gap:10px;
+  border-bottom:2px solid var(--burgundy);
+  padding-bottom:8px;
+  margin-bottom:12px;
+}
+
+.marksheet-logo{
+  width:78px;
+  height:78px;
+  object-fit:contain;
+}
+
+.header-center{ text-align:center; }
+
+.header-center h1{
+  font-size:26px;
+  font-weight:700;
+  letter-spacing:1px;
+  color:var(--burgundy-dark);
+  margin:0;
+  text-transform:uppercase;
+}
+
+.header-center h2{
+  font-size:12.5px;
+  font-weight:400;
+  color:var(--muted);
+  letter-spacing:1.5px;
+  margin:2px 0 8px;
+  text-transform:uppercase;
+}
+
+.progress-ribbon{
+  display:inline-block;
+  position:relative;
+  background:linear-gradient(180deg, var(--burgundy) 0%, var(--burgundy-dark) 100%);
+  color:#fff;
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:3px;
+  padding:6px 34px;
+  text-transform:uppercase;
+  margin:0;
+  box-shadow:0 2px 5px rgba(0,0,0,0.25);
+}
+
+.progress-ribbon::before,
+.progress-ribbon::after{
+  content:"";
+  position:absolute;
+  top:0;
+  border:9px solid var(--burgundy-dark);
+  filter:brightness(0.75);
+}
+
+.progress-ribbon::before{
+  left:-16px;
+  border-right-color:transparent;
+  border-top-color:transparent;
+}
+
+.progress-ribbon::after{
+  right:-16px;
+  border-left-color:transparent;
+  border-top-color:transparent;
+}
+
+.header-logo-placeholder{
+  width:78px;
+  height:78px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.qr-img{
+  max-width:100%;
+  max-height:58px;
+  object-fit:contain;
+}
+
+.qr-caption{
+  font-size:8px;
+  color:var(--muted);
+  margin-top:2px;
+  letter-spacing:0.4px;
+  text-align:center;
+}
+
+/* ---------- STUDENT INFO + GRADING ---------- */
+
+.top-info-row{
+  display:grid;
+  grid-template-columns:1.35fr 1fr;
+  gap:10px;
+  margin-bottom:12px;
+}
+
+.student-section,
+.grading-section{
+  border:1.5px solid var(--line);
+  background:rgba(255,255,255,0.55);
+  border-radius:4px;
+  overflow:hidden;
+}
+
+.panel-title,
+.grading-title{
+  background:var(--burgundy);
+  color:#fff;
+  font-size:11.5px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  padding:5px 10px;
+  font-weight:700;
+}
+
+.student-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:12.5px;
+}
+
+.student-table td{
+  padding:6px 8px;
+  border-bottom:1px dashed #cbb887;
+  vertical-align:middle;
+}
+
+.student-table tr:last-child td{ border-bottom:none; }
+
+.student-table td.s-label{
+  width:44%;
+  min-width:130px;
+  white-space:nowrap;
+  font-weight:700;
+  color:var(--burgundy-dark);
+}
+
+.student-table td.s-value{
+  border-bottom:1px solid #8a7550;
+  font-weight:600;
+}
+
+.grading-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:11.5px;
+}
+
+.grading-table th,
+.grading-table td{
+  border:1px solid var(--line);
+  text-align:center;
+  padding:4.5px 4px;
+  height:20px;
+}
+
+.grading-table thead th{
+  background:var(--gold-light);
+  color:var(--burgundy-dark);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+}
+
+.grading-table tbody tr:nth-child(even){
+  background:rgba(212,175,55,0.08);
+}
+
+/* ---------- ACADEMIC ASSESSMENT TABLE ---------- */
+
+.assessment-title{
+  font-size:12px;
+  font-weight:700;
+  color:var(--burgundy-dark);
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin:14px 0 6px;
+  border-left:4px solid var(--burgundy);
+  padding-left:8px;
+}
+
+.table-scroll{
+  width:100%;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+}
+
+.result-table{
+  width:100%;
+  min-width:600px;
+  border-collapse:collapse;
+  font-size:11.5px;
+}
+
+.result-table th,
+.result-table td{
+  border:1px solid var(--line);
+  text-align:center;
+  padding:5px 4px;
+}
+
+.result-table thead tr:first-child th{
+  background:var(--burgundy);
+  color:#fff;
+  font-weight:700;
+  letter-spacing:0.5px;
+  text-transform:uppercase;
+  font-size:11px;
+}
+
+.result-table thead tr:last-child th{
+  background:var(--gold-light);
+  color:var(--burgundy-dark);
+  font-weight:700;
+  font-size:10.5px;
+}
+
+.result-table tbody td:first-child{
+  text-align:left;
+  font-weight:700;
+  padding-left:8px;
+  white-space:nowrap;
+}
+
+.result-table tbody tr:nth-child(even){
+  background:rgba(212,175,55,0.06);
+}
+
+/* ---------- FINAL SUMMARY ---------- */
+
+.final-summary{
+  margin-top:14px;
+  border:2px solid var(--burgundy);
+  border-radius:6px;
+  overflow:hidden;
+}
+
+.final-summary table{
+  width:100%;
+  border-collapse:collapse;
+  text-align:center;
+  background:linear-gradient(135deg, #fdf3d0 0%, #f3dd94 55%, #e9c964 100%);
+}
+
+.final-summary th{
+  font-size:9.5px;
+  text-transform:uppercase;
+  letter-spacing:0.8px;
+  color:var(--burgundy-dark);
+  font-weight:700;
+  padding:10px 4px 4px;
+  border-right:1px solid rgba(122,17,40,0.25);
+}
+
+.final-summary th:last-child,
+.final-summary td:last-child{ border-right:none; }
+
+.final-summary td{
+  font-size:17px;
+  font-weight:700;
+  color:var(--ink);
+  padding:4px 4px 12px;
+  border-right:1px solid rgba(122,17,40,0.25);
+}
+
+.final-summary td.grand-grade,
+.final-summary td.grand-rank{
+  color:var(--burgundy-dark);
+  font-size:19px;
+}
+
+/* ---------- VERIFIED BADGE ---------- */
+
+.verified-note{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  margin:14px auto 0;
+  padding:6px 14px;
+  border:1px dashed var(--burgundy);
+  border-radius:20px;
+  width:fit-content;
+  font-size:11px;
+  color:var(--burgundy-dark);
+  font-weight:700;
+  letter-spacing:0.4px;
+  background:rgba(212,175,55,0.1);
+}
+
+.verified-note .check{
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  background:var(--burgundy);
+  color:#fff;
+  font-size:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:none;
+}
+
+/* ---------- SIGNATURES ---------- */
+
+.signature-area{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:10px;
+  margin-top:34px;
+  text-align:center;
+}
+
+.sign-col{
+  font-size:11px;
+  color:var(--muted);
+}
+
+.sign-img{
+  max-width:110px;
+  max-height:42px;
+  object-fit:contain;
+  display:block;
+  margin:0 auto 4px;
+}
+
+.sign-line{
+  border-top:1.5px solid var(--ink);
+  margin-bottom:6px;
+  height:6px;
+}
+
+.sign-label{
+  font-weight:700;
+  color:var(--ink);
+  font-size:11.5px;
+}
+
+/* ---------- ACTION BUTTONS ---------- */
+
+.action-buttons{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  margin:26px 0 6px;
+  flex-wrap:wrap;
+}
+
+.btn-print{
+  padding:12px 26px;
+  color:#fff;
+  background:linear-gradient(180deg, var(--burgundy) 0%, var(--burgundy-dark) 100%);
+}
+
+.btn-download{
+  padding:12px 26px;
+  color:#3a2c0a;
+  background:linear-gradient(180deg, var(--gold) 0%, #b8912a 100%);
+}
+
+/* ==========================================================
+   3. RESPONSIVE / MOBILE (Android-friendly)
+   ========================================================== */
+
+@media (max-width: 900px){
+
+  .portal-container{
+    margin:20px 12px;
+    padding:26px 18px 22px;
+  }
+
+  .result-wrapper{
+    padding:12px 6px 30px;
+  }
+
+  .marksheet{
+    width:100%;
+    padding:14px 10px 16px;
+    border-width:2px;
+  }
+
+  .header-logo-row{
+    grid-template-columns:44px 1fr 44px;
+    gap:6px;
+  }
+
+  .marksheet-logo{ width:44px; height:44px; }
+  .header-logo-placeholder{ width:44px; height:44px; }
+  .qr-caption{ display:none; }
+
+  .header-center h1{ font-size:16px; letter-spacing:0.3px; }
+  .header-center h2{ font-size:9px; letter-spacing:0.8px; }
+
+  .progress-ribbon{
+    font-size:10px;
+    padding:5px 18px;
+    letter-spacing:1.5px;
+  }
+
+  .progress-ribbon::before,
+  .progress-ribbon::after{ border-width:6px; }
+
+  .top-info-row{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+
+  .student-table{ font-size:11px; }
+  .student-table td.s-label{ min-width:0; width:42%; }
+
+  .grading-table{ font-size:10px; }
+
+  .assessment-title{ font-size:10.5px; margin:12px 0 5px; }
+
+  .final-summary th{ font-size:8.5px; }
+  .final-summary td{ font-size:14px; }
+  .final-summary td.grand-grade,
+  .final-summary td.grand-rank{ font-size:15px; }
+
+  .signature-area{
+    grid-template-columns:1fr;
+    gap:24px;
+    margin-top:26px;
+  }
+}
+
+/* ==========================================================
+   4. PRINT (A4-ready)
+   ========================================================== */
+
+@media print{
+
+  @page{
+    size:A4;
+    margin:6mm;
+  }
+
+  html, body{
+    background:#fff !important;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+
+  .portal-container{ display:none !important; }
+
+  .result-wrapper{ padding:0; }
+
+  .marksheet{
+    box-shadow:none;
+    border:3px solid var(--burgundy);
+    width:100%;
+    margin:0;
+    page-break-inside:avoid;
+  }
+
+  .action-buttons{ display:none !important; }
+
+  .table-scroll{ overflow:visible; }
+  .result-table{ min-width:0; }
+}
