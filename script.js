@@ -258,7 +258,7 @@ function renderResult(student) {
     grandFullMarks += fm;
     grandObtained += total;
 
-    const fmStructure = getFmBreakdown(fm, student[sub.written], student.CLASS);
+    const fmStructure = getFmBreakdown(fm, student[sub.written], student.CLASS, sub.name);
 
     // Full Marks (written/oral/fm) => regular weight
     // Obtained Marks (obt-cell class) => bold weight
