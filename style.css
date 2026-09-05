@@ -16,20 +16,20 @@ body {
 }
 
 /* =========================
-   PORTAL LOGO
+   PORTAL LOGO (90px)
 ========================= */
 
 .portal-logo {
-  width: 38px;
-  height: 38px;
+  width: 90px;
+  height: 90px;
   object-fit: contain;
   border-radius: 50%;
-  margin-bottom: 10px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  margin-bottom: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
 }
 
 /* =========================
-   PORTAL
+   PORTAL (SEARCH AREA)
 ========================= */
 
 .portal-container {
@@ -37,26 +37,28 @@ body {
   max-width: 500px;
   margin: auto;
   text-align: center;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .portal-container h1 {
-  font-size: 19px;
-  font-weight: 700;
-  color: #003366;
+  font-size: 20px;
+  font-weight: 800;
+  color: #001a33;
   margin-bottom: 8px;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.3px;
 }
 
 .portal-container h2 {
   font-size: 16px;
-  color: #444;
+  color: #0f172a;
+  font-weight: 700;
   margin-bottom: 8px;
 }
 
 .portal-container h3 {
-  font-size: 20px;
-  color: #0b5394;
+  font-size: 19px;
+  color: #004085;
+  font-weight: 800;
   margin-bottom: 30px;
 }
 
@@ -181,7 +183,7 @@ body {
 }
 
 /* =========================
-   HEADER (FIXED CENTERING)
+   HEADER (FIXED CENTERING & CRISP COLORS)
 ========================= */
 
 .top-header {
@@ -217,8 +219,8 @@ body {
 
 .header-center h1 {
   font-size: 26px;
-  font-weight: 800;
-  color: #003366;
+  font-weight: 900;
+  color: #001f3f;
   letter-spacing: 0.5px;
   margin: 0 0 4px 0;
   text-transform: uppercase;
@@ -228,20 +230,21 @@ body {
 
 .header-center h2 {
   font-size: 16px;
-  color: #4a5568;
+  color: #0f172a;
   margin: 2px 0;
-  font-weight: 600;
+  font-weight: 700;
   text-align: center;
   width: 100%;
 }
 
 .header-center h3 {
   font-size: 18px;
-  color: #2b6cb0;
+  color: #004085;
   margin: 4px 0 0 0;
-  font-weight: 700;
+  font-weight: 800;
   text-align: center;
   width: 100%;
+  letter-spacing: 0.8px;
 }
 
 /* =========================
