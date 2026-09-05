@@ -181,19 +181,21 @@ body {
 }
 
 /* =========================
-   HEADER
+   HEADER (FIXED CENTERING)
 ========================= */
 
 .top-header {
   border-bottom: 3px solid #003366;
   padding-bottom: 12px;
   margin-bottom: 4px;
+  width: 100%;
 }
 
 .header-logo-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
 .marksheet-logo {
@@ -204,24 +206,33 @@ body {
 }
 
 .header-center {
-  text-align: center;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 10px;
 }
 
 .header-center h1 {
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 800;
   color: #003366;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   margin: 0 0 4px 0;
   text-transform: uppercase;
+  text-align: center;
+  width: 100%;
 }
 
 .header-center h2 {
-  font-size: 17px;
+  font-size: 16px;
   color: #4a5568;
   margin: 2px 0;
   font-weight: 600;
+  text-align: center;
+  width: 100%;
 }
 
 .header-center h3 {
@@ -229,6 +240,8 @@ body {
   color: #2b6cb0;
   margin: 4px 0 0 0;
   font-weight: 700;
+  text-align: center;
+  width: 100%;
 }
 
 /* =========================
